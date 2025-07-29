@@ -1,6 +1,4 @@
 # Portfolio-Optimization
-# Portfolio Optimization using Python
-
 This project focuses on optimizing a portfolio of financial assets to achieve the **maximum Sharpe Ratio**, representing the best risk-adjusted return. It uses historical market data, calculates key portfolio metrics, and applies optimization techniques to determine the ideal asset allocation.
 
 ##  Objective
