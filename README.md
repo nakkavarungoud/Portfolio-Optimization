@@ -1,59 +1,77 @@
-# Portfolio-Optimization
-This project focuses on optimizing a portfolio of financial assets to achieve the **maximum Sharpe Ratio**, representing the best risk-adjusted return. It uses historical market data, calculates key portfolio metrics, and applies optimization techniques to determine the ideal asset allocation.
+##  Project Overview
 
-##  Objective
+Portfolio Optimization is a fundamental concept in finance that aims to maximize returns while minimizing risk. In this project, I applied Python-based data analysis and optimization techniques to identify the ideal allocation of funds among a set of financial assets.
 
-The main objective of this project is to determine the optimal portfolio weights among selected financial assets by maximizing the Sharpe Ratio. This helps in identifying the most efficient combination of assets for investment.
+The optimization is done using the **Sharpe Ratio**, which provides the best trade-off between risk and return.
 
-##  Tools & Technologies Used
+##  Key Objectives
 
-- Python 
-- NumPy
-- Pandas
-- Matplotlib
-- yFinance (for financial data)
-- SciPy (for optimization)
+- Fetch historical stock data using `yfinance`
+- Analyze return and risk metrics (volatility, correlation, covariance)
+- Use mathematical optimization to **maximize the Sharpe Ratio**
+- Determine the **optimal asset weights** in a portfolio
+- Visualize the **Efficient Frontier**
 
-##  Assets Used
+## 📈 Tools & Technologies Used
 
-The portfolio includes the following ETFs:
-- `SPY` – S&P 500 ETF
-- `BND` – Total Bond Market ETF
-- `GLD` – Gold Trust ETF
-- `QQQ` – Nasdaq-100 ETF
-- `VTI` – Total Stock Market ETF
+| Category        | Tools/Technologies                     |
+|----------------|----------------------------------------|
+| Programming     | Python, Jupyter Notebook               |
+| Libraries       | Pandas, NumPy, Matplotlib, SciPy, yFinance |
+| Optimization    | SciPy (`minimize` function)            |
+| Visualization   | Matplotlib, Efficient Frontier Plot    |
 
-## Methodology
+## Dataset
 
-1. **Data Collection** – Downloaded historical adjusted close prices using `yfinance`.
-2. **Return Calculation** – Calculated daily and annual returns.
-3. **Covariance & Risk** – Estimated the annualized volatility using the covariance matrix.
-4. **Optimization** – Applied SciPy’s `minimize` function to maximize the Sharpe Ratio.
-5. **Result Evaluation** – Output optimal weights, expected return, volatility, and Sharpe Ratio.
-6. **Visualization** – Plotted the Efficient Frontier for better understanding.
+- Source: Fetched using `yfinance`
+- Assets considered:  
+  - `SPY` – S&P 500 ETF  
+  - `BND` – Total Bond Market ETF  
+  - `GLD` – Gold ETF  
+  - `QQQ` – Nasdaq 100 ETF  
+  - `VTI` – Total US Stock Market ETF  
+- Timeframe: Last 5 years of daily adjusted close prices
+
+## Insights
+
+- Portfolio allocation was heavily favored toward **SPY (50%)**, **GLD (40.64%)**, and **VTI (9.36%)**.
+- Bonds (`BND`) and Nasdaq (`QQQ`) were assigned 0% due to risk-return imbalance.
+- The **Sharpe Ratio** was **0.6702**, indicating a favorable risk-adjusted return.
+- Volatility was moderate at **12.87%**, with an expected annual return of **13.01%**.
 
 ## Results
 
-**Optimal Portfolio Allocation**:
-The results showed that the optimal portfolio consists of:
-
+```plaintext
+Optimal Weights:
 SPY: 50.00%
-
 GLD: 40.64%
-
-VTI: 9.36%
-
-BND & QQQ: 0.00%
-
-This optimal allocation achieves:
+VTI: 09.36%
+BND: 00.00%
+QQQ: 00.00%
 
 Expected Annual Return: 13.01%
-
-Expected Volatility (Standard Deviation): 12.87%
-
+Expected Volatility: 12.87%
 Sharpe Ratio: 0.6702
 
-The results indicate a well-balanced strategy with a strong tilt towards equities and gold, while avoiding assets with lower contribution to the risk-return tradeoff. The visualizations and final weights chart further enhance the interpretability of the strategy, making it both analytically sound and practically applicable.
+## Project Structure
 
+portfolio-optimization/
+│
+├── Portfolio_Optimization.ipynb   # Main Jupyter Notebook
+├── efficient_frontier.png         # Final Plot
+├── images/                        # Images used in README
+├── README.md                      # Project Documentation
+
+## Conclusion
+This project demonstrates how historical data and statistical methods can be applied to build a balanced and high-performing investment portfolio. The optimized portfolio shows that diversification between equity (SPY, VTI) and commodities (GLD) leads to a strong risk-return profile.
+
+## Future Improvements
+Add dynamic rebalancing of portfolio
+
+Use Monte Carlo simulation for stress testing
+
+Add constraints like minimum/maximum investment or sector-based limits
+
+Explore machine learning for return forecasting
 
 
